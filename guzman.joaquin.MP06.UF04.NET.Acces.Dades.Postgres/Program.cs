@@ -27,18 +27,18 @@
             while (!exit)
             {
                 DisplayMenu();
-                string input = Console.ReadLine();
+                string input = Console.ReadLine() ?? "";
                 switch (input)
                 {
                     case "1":
                         Vehicle vehicle = new Vehicle();
                         Console.WriteLine("\n---- Crear vehicle ----");
                         Console.Write("Introdueix marca: ");
-                        vehicle.Marca = Console.ReadLine();
+                        vehicle.Marca = Console.ReadLine() ?? "";
                         Console.Write("Introdueix model: ");
-                        vehicle.Model = Console.ReadLine();
+                        vehicle.Model = Console.ReadLine() ?? "";
                         Console.Write("Introdueix capacitat del maleter: ");
-                        vehicle.CapacitatMaleter = int.Parse(Console.ReadLine());
+                        vehicle.CapacitatMaleter = int.Parse(Console.ReadLine() ?? "");
                         vehicleRepository.Crear(vehicle);
                         break;
                     case "2":
@@ -53,19 +53,19 @@
                         Vehicle vehicleActualitzat = new Vehicle();
                         Console.WriteLine("\n---- Actualitzar vehicle ----");
                         Console.Write("Introdueix Id: ");
-                        vehicleActualitzat.Id = int.Parse(Console.ReadLine());
+                        vehicleActualitzat.Id = int.Parse(Console.ReadLine() ?? "");
                         Console.Write("Introdueix marca: ");
-                        vehicleActualitzat.Marca = Console.ReadLine();
+                        vehicleActualitzat.Marca = Console.ReadLine() ?? "";
                         Console.Write("Introdueix model: ");
-                        vehicleActualitzat.Model = Console.ReadLine();
+                        vehicleActualitzat.Model = Console.ReadLine() ?? "";
                         Console.Write("Introdueix capacitat del maleter: ");
-                        vehicleActualitzat.CapacitatMaleter = int.Parse(Console.ReadLine());
+                        vehicleActualitzat.CapacitatMaleter = int.Parse(Console.ReadLine() ?? "");
                         vehicleRepository.Actualitzar(vehicleActualitzat);
                         break;
                     case "4":
                         Console.WriteLine("\n---- Borrar vehicle ----");
                         Console.Write("Introdueix Id: ");
-                        int vehicleId = int.Parse(Console.ReadLine());
+                        int vehicleId = int.Parse(Console.ReadLine() ?? "");
                         vehicleRepository.Eliminar(vehicleId);
                         break;
                     case "5":
